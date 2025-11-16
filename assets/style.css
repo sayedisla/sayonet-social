@@ -56,7 +56,7 @@ body{
   margin-top:20px;
 }
 
-/* big centered board (like your sample) */
+
 .board {
   background:var(--white);
   border-radius:var(--card-radius);
