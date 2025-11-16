@@ -1,0 +1,168 @@
+/* public/assets/style.css
+   Modern, clean UI for AuthBoard (feed + auth pages).
+   Responsive and simple — drop into your project and refresh.
+*/
+
+/* Reset-ish */
+* { box-sizing: border-box; margin:0; padding:0; }
+html,body { height:100%; }
+
+:root{
+  --bg: #f4f6f8;
+  --card: #fff;
+  --muted: #6b7280;
+  --primary: #1da1f2;
+  --primary-dark: #0d95e8;
+  --accent: #ff7a59;
+  --danger: #e0245e;
+  --border: #e6edf3;
+  --radius: 12px;
+  --shadow: 0 6px 18px rgba(21,33,52,0.06);
+  --mono: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Page layout */
+body {
+  font-family: var(--mono);
+  background: var(--bg);
+  color: #111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+header h1 { font-size:20px; margin-bottom:2px; color:#0f172a; }
+header .muted { color:var(--muted); font-size:13px; }
+
+/* Buttons */
+.btn {
+  border: 1px solid transparent;
+  padding:8px 14px;
+  border-radius: 10px;
+  font-weight:600;
+  font-size:14px;
+  cursor:pointer;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+.btn-primary:hover { background: var(--primary-dark); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid rgba(29,161,242,0.12);
+}
+.btn-outline:hover {
+  background: rgba(29,161,242,0.06);
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding:18px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+
+.auth-container {
+  display:flex;
+  justify-content:center;
+  padding: 24px 0;
+}
+.auth-card {
+  width:100%;
+  max-width:420px;
+  background: var(--card);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(15,23,42,0.06);
+  border: 1px solid var(--border);
+  text-align:left;
+}
+.auth-logo {
+  font-size:28px;
+  font-weight:800;
+  color:var(--primary);
+}
+.auth-subtitle { color:var(--muted); margin-bottom:18px; }
+
+/* Form */
+.form-auth .form-group { margin-bottom:14px; }
+.form-label { display:block; font-weight:600; color:#111827; margin-bottom:8px; font-size:14px; }
+.form-control {
+  width:100%;
+  padding:12px 14px;
+  border-radius: 10px;
+  border:1px solid var(--border);
+  background: #fff;
+  font-size:14px;
+}
+.form-control:focus { outline:none; border-color:var(--primary); box-shadow: 0 0 0 3px rgba(29,161,242,0.06); }
+
+/* Alerts */
+.alert { padding:12px 14px; border-radius:10px; margin-bottom:12px; font-weight:600; }
+.alert-success { background: rgba(23,191,99,0.08); color: #0d8b4a; border-left:4px solid #17bf63; }
+.alert-danger { background: rgba(224,36,94,0.06); color: #b51c4a; border-left:4px solid #e0245e; }
+
+/* Feed composer */
+textarea { width:100%; min-height:80px; padding:12px 14px; border-radius:10px; border:1px solid var(--border); resize:vertical; font-size:15px; }
+
+/* Messages */
+.message { padding:12px 14px; border-radius:10px; margin-bottom:14px; }
+.message.success { background:#d1fae5; color:#065f46; border:1px solid #6ee7b7; }
+.message.error { background:#fee2e2; color:#991b1b; border:1px solid #fca5a5; }
+
+/* Post card styles (basic) */
+.post-card {
+  background: var(--card);
+  border-radius: 14px;
+  padding:16px;
+  margin-bottom:18px;
+  border:1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.post-header { display:flex; align-items:center; gap:12px; margin-bottom:8px; }
+.post-avatar {
+  width:48px; height:48px; border-radius:50%;
+  display:inline-flex; align-items:center; justify-content:center;
+  background: linear-gradient(135deg,var(--primary),var(--accent));
+  color:white; font-weight:700;
+}
+.post-user { font-weight:700; }
+.post-time { color:var(--muted); font-size:13px; margin-left:8px; }
+
+/* Post image */
+.post-image img { width:100%; border-radius:12px; display:block; margin-top:12px; }
+
+/* Post actions */
+.post-actions { display:flex; gap:8px; margin-top:12px; }
+.post-actions .btn { padding:8px 12px; border-radius:999px; }
+
+
+@media (max-width:768px) {
+  .container { padding:16px; }
+  .auth-card { margin: 0 12px; }
+  header { flex-direction:column; align-items:flex-start; gap:10px; }
+}
