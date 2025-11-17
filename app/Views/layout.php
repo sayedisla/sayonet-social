@@ -94,9 +94,7 @@ if (!function_exists('url')) {
         <?php echo $content ?? '' ; ?>
     </main>
 
-    <footer style="margin-top:20px; font-size:12px; color:#666;">
-        <small>SayoNet — teaching project</small>
-    </footer>
+   
 </div>
 </body>
 </html>
